@@ -6,7 +6,7 @@ const initialValues = {
     title: '',
     director: '',
     metascore: '',
-    stars: []
+    stars: ''
 }
 
 const AddForm = props => {
@@ -17,13 +17,18 @@ const AddForm = props => {
     const handleChanges = e => {
         setMovie({
             ...movie,
-            [e.target.name]: [e.target.value]
+            [e.target.name]: e.target.value
         })
     }
 
     const addMovie = e => {
         e.preventDefault();
-        axios.post(`http://localhost:5000/api/movies`, movie)
+        const newMovie = {
+            ...movie,
+            stars: movie.stars.split(', ')
+        }
+        console.log(newMovie);
+        axios.post(`http://localhost:5000/api/movies`, newMovie)
         .then( res => {
             props.setMovieList(res.data);
             push('/');
@@ -56,6 +61,13 @@ const AddForm = props => {
                 name='metascore'
                 type='text'
                 value={movie.metascore}
+                onChange={handleChanges}
+                />
+                Stars(separate by commas)
+                <input
+                name='stars'
+                type='text'
+                value={movie.stars}
                 onChange={handleChanges}
                 />
 
