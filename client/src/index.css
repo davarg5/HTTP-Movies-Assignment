@@ -75,3 +75,54 @@ body {
   color: red;
   text-align: center;
 }
+
+.edit-button {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  background-color: lightcoral;
+  margin-top: 10%;
+}
+
+.edit-button:hover {
+  background-color: blue;
+  color: white;
+}
+
+.delete-button {
+  /* position: absolute; */
+  top: 25px;
+  right: 25px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  background-color: lightgoldenrodyellow;
+  margin-top: 1%;
+  width: 20%;
+  text-align: center;
+  margin: auto;
+}
+
+.delete-button:hover {
+  background-color: gray;
+  color: white;
+}
+
+.add-button {
+  /* position: absolute; */
+  top: 25px;
+  right: 25px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  background-color: lightsteelblue;
+  margin-top: 1%;
+  width: 20%;
+  text-align: center;
+  margin: auto;
+}
+
+.add-button:hover {
+  background-color: lightseagreen;
+  color: white;
+}
